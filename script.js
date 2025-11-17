@@ -41,9 +41,9 @@ form.addEventListener("submit", (e) => {
   }
 
   // Phone Validation
-  const phonePattern = /^[0-9]{10}$/;
+  const phonePattern = /^[0-9]{11}$/;
   if (!phone.value.match(phonePattern)) {
-    setError(phone, "Enter a 10-digit phone number");
+    setError(phone, "Enter a 11-digit phone number");
   } else {
     clearError(phone);
   }
