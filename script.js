@@ -11,7 +11,6 @@ form.addEventListener("submit", (e) => {
   const password = document.getElementById("password");
   const confirmPassword = document.getElementById("confirmPassword");
 
-  // Helper function
   function setError(input, message) {
     const group = input.parentElement;
     const error = group.querySelector("small");
@@ -25,14 +24,12 @@ form.addEventListener("submit", (e) => {
     error.innerText = "";
   }
 
-  // Name Validation
   if (name.value.trim() === "") {
     setError(name, "Name is required");
   } else {
     clearError(name);
   }
 
-  // Email Validation
   const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
   if (!email.value.match(emailPattern)) {
     setError(email, "Enter a valid email");
@@ -40,7 +37,6 @@ form.addEventListener("submit", (e) => {
     clearError(email);
   }
 
-  // Phone Validation
   const phonePattern = /^[0-9]{11}$/;
   if (!phone.value.match(phonePattern)) {
     setError(phone, "Enter a 11-digit phone number");
@@ -48,14 +44,12 @@ form.addEventListener("submit", (e) => {
     clearError(phone);
   }
 
-  // Password Validation
   if (password.value.length < 6) {
     setError(password, "Password must be at least 6 characters");
   } else {
     clearError(password);
   }
 
-  // Confirm Password
   if (password.value !== confirmPassword.value) {
     setError(confirmPassword, "Passwords do not match");
   } else {
