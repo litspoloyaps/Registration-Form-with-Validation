@@ -1,19 +1,31 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #74abea, #5563de);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.container {
-  width: 350px;
-  margin: 60px auto;
-  padding: 25px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px #aaa;
+.card {
+  width: 380px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  animation: fadeIn 0.8s ease;
 }
 
 h2 {
   text-align: center;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
   margin-bottom: 20px;
 }
 
@@ -23,45 +35,64 @@ h2 {
 
 .input-group label {
   display: block;
+  font-weight: 600;
   margin-bottom: 6px;
 }
 
 .input-group input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 12px;
+  font-size: 15px;
+  border: 1.7px solid #bbb;
+  border-radius: 6px;
+  transition: 0.25s;
+}
+
+.input-group input:focus {
+  border-color: #5563de;
+  box-shadow: 0 0 0 3px rgba(85, 99, 222, 0.2);
+  outline: none;
 }
 
 .error {
-  color: red;
+  color: #e03e3e;
   font-size: 13px;
-  margin-top: 3px;
-  display: block;
+  margin-top: 4px;
 }
 
-button {
+.btn {
   width: 100%;
-  padding: 12px;
-  background: #3498db;
-  color: white;
+  padding: 14px;
+  background: #5563de;
+  color: #fff;
   border: none;
-  border-radius: 4px;
   font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #3d4bc4;
+  transform: translateY(-2px);
 }
 
 footer {
-  margin-top: 40px;
-  padding: 15px;
-  text-align: center;
-  background: transparent;
-  color: #333;
-  font-size: 14px;
-  position: relative;
-  bottom: 0;
+  position: absolute;
+  bottom: 10px;
   width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
 }
 
-footer p {
-  margin: 0;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
